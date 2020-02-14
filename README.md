@@ -79,12 +79,8 @@ _The variables required in order for the module to be successfully called from t
 
 _This module has the following outputs:_
 
-* **_endpoint_**
 * **_id_**
 * **_arn_**
-* **_database\_name_**
-* **_engine_**
-* **_master\_username_**
 
 
 ### _Usage_
