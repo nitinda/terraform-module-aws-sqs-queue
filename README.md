@@ -127,6 +127,18 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Comments_** |
 |:----|:----|-----:|:---:|
+| **_name_** | _This is the human-readable name of the queue_ | _string_ | **_Required_** |
+| **_visibility\_timeout\_seconds_** | _The visibility timeout for the queue_ | _number_ | **_Optional (Default - 30)_** |
+| **_message\_retention\_seconds_** | _The number of seconds Amazon SQS retains a message_ | _number_ | **_Optional (Default - 345600)_** |
+| **_max\_message\_size_** | _The limit of how many bytes a message can contain_ | _number_ | **_Optional (Default - 262144)_** |
+| **_delay\_seconds_** | _The time in seconds that the delivery_ | _number_ | **_Optional (Default - 0)_** |
+| **_receive\_wait\_time\_seconds_** | _The time for which a ReceiveMessage call_ | _number_ | **_Optional (Default - 0)_** |
+| **_policy_** | _The JSON policy for the SQS queue_ | _string_ | **_Optional (Default - null)_** |
+| **_redrive\_policy_** | _The JSON policy to set up the Dead Letter Queue_ | _string_ | **_Optional (Default - null)_** |
+| **_fifo\_queue_** | _Boolean designating a FIFO queue_ | _bool_ | **_Optional (Default - false)_** |
+| **_content\_based\_deduplication_** | _Enables content-based deduplication for FIFO queues_ | _bool_ | **_Optional (Default - false)_** |
+| **_kms_master\_key\_id_** | _The ID of an AWS-managed customer master key_ | _string_ | **_Optional (Default - null)_** |
+| **_kms\_data\_key\_reuse\_period\_seconds_** | _The length of time, in seconds_ | _number_ | **_Optional (Default - 300)_** |
 | **_tags_** | _Resource tags_ | _map(string)_ | **_Required_** |
 
 
