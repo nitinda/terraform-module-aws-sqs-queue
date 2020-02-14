@@ -19,7 +19,7 @@ variable "message_retention_seconds" {
 variable "max_message_size" {
   description = "The limit of how many bytes a message can contain before Amazon SQS rejects it."
   type        = number
-  default     = 345600
+  default     = 262144
 }
 
 variable "delay_seconds" {
