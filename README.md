@@ -32,7 +32,7 @@ _Below we are able to check the resources that are being created as part of this
 
 _To use this module, add the following call to your code:_
 
-
+* **_Example Usage_**
 
 ```tf
 module "sqs_queue" {
@@ -53,10 +53,44 @@ module "sqs_queue" {
   }
 
   # SQS Queue
-  
+  name                      = "terraform-example-queue"
+  delay_seconds             = 90
+  max_message_size          = 2048
+  message_retention_seconds = 86400
+  receive_wait_time_seconds = 10
+  redrive_policy            = jsonencode({
+    deadLetterTargetArn = aws_sqs_queue.terraform_queue_deadletter.arn
+    maxReceiveCount     = 4
+  })
 }
 ```
 
+* **_FIFO queue_**
+
+```tf
+module "sqs_queue" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-sqs-queue.git?ref=master"
+
+  providers = {
+    aws = aws.services
+  }
+
+  # Tags
+  tags = {
+    Project      = "POC"
+    Owner        = "Platform Team"
+    Environment  = "prod"
+    BusinessUnit = "Platform Team"
+    ManagedBy    = "Terraform"
+    Application  = "RDS Cluster Parameter Group"
+  }
+
+  # SQS Queue
+  name                        = "terraform-example-queue.fifo"
+  fifo_queue                  = true
+  content_based_deduplication = true
+}
+```
 
 ---
 

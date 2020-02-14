@@ -45,14 +45,15 @@ variable "redrive_policy" {
 }
 
 variable "fifo_queue" {
-  description = "description"
+  description = "Boolean designating a FIFO queue"
   type        = bool
   default     = false
 }
 
 variable "content_based_deduplication" {
   description = "Enables content-based deduplication for FIFO queues"
-  default     = null
+  type        = bool
+  default     = false
 }
 
 variable "kms_master_key_id" {
