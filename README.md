@@ -65,7 +65,7 @@ module "sqs_queue" {
 }
 ```
 
-* **_FIFO queue_**
+* **_Example : FIFO queue_**
 
 ```tf
 module "sqs_queue" {
@@ -92,7 +92,7 @@ module "sqs_queue" {
 }
 ```
 
-- **_Server-side encryption (SSE)_**
+- **_Example : Server-side encryption (SSE)_**
 
 ```tf
 module "sqs_queue" {
