@@ -1,5 +1,5 @@
 # _Terraform Module: terraform-module-aws-sqs-queue_
-_Terraform module for AWS SQS Queue_
+_Terraform module for **AWS SQS Queue**_
 
 ## _General_
 
