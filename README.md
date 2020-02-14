@@ -66,7 +66,6 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Comments_** |
 |:----|:----|-----:|:---:|
-
 | **_tags_** | _Resource tags_ | _map(string)_ | **_Required_** |
 
 
