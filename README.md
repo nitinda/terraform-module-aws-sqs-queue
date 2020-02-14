@@ -92,6 +92,33 @@ module "sqs_queue" {
 }
 ```
 
+- **_Server-side encryption (SSE)_**
+
+```tf
+module "sqs_queue" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-sqs-queue.git?ref=master"
+
+  providers = {
+    aws = aws.services
+  }
+
+  # Tags
+  tags = {
+    Project      = "POC"
+    Owner        = "Platform Team"
+    Environment  = "prod"
+    BusinessUnit = "Platform Team"
+    ManagedBy    = "Terraform"
+    Application  = "RDS Cluster Parameter Group"
+  }
+
+  # SQS Queue
+  name                              = "terraform-example-queue"
+  kms_master_key_id                 = "alias/aws/sqs"
+  kms_data_key_reuse_period_seconds = 300
+}
+```
+
 ---
 
 ## _Inputs_
