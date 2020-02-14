@@ -3,7 +3,7 @@ _Terraform module for AWS SQS Queue_
 
 ## _General_
 
-_This module can be used to deploy a_ _**SQS Queue** on AWS Cloud Provider......_
+_This module can be used to deploy a_ _**SQS Queue** on **AWS** Cloud Provider......_
 
 
 ---
